@@ -1,0 +1,31 @@
+{
+  "name": "way_ferer",
+  "version": "1.0.0",
+  "description": "A public bus transportation booking server",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js --exec babel-node --presets babel-preset-env",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zemchuks/Way_Ferer.git"
+  },
+  "author": "Bruno Ezemba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zemchuks/Way_Ferer/issues"
+  },
+  "homepage": "https://github.com/zemchuks/Way_Ferer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.19.0",
+    "nodemon": "^1.19.1"
+  }
+}
