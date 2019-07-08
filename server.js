@@ -13,5 +13,5 @@ app.get('/', (req, res) => {
 
 const port = 8080
 app.listen(port, () => {
-    console.log(`App listenint on ${port}`)
+    console.log(`App listening on ${port}`)
 })
