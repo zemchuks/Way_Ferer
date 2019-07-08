@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.status(200).json({ message: 'Welcome to way_ferer API'})
 })
 
-const port = 4000
+const port = 8080
 app.listen(port, () => {
     console.log(`App listenint on ${port}`)
 })

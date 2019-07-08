@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js --exec babel-node --presets babel-preset-env",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel server -d build",
+    "start:dev": "nodemon --exec babel-node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,12 @@
   },
   "homepage": "https://github.com/zemchuks/Way_Ferer#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "path": "^0.12.7",
+    "pg": "^7.11.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -26,6 +33,16 @@
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "body-parser": "^1.19.0",
-    "nodemon": "^1.19.1"
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.0.4",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "mocha": "^6.1.4",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
+    "prettier-eslint-cli": "^5.0.0"
   }
 }
