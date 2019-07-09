@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js --exec babel-node --presets babel-preset-env",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-post-build": "",
     "build": "babel server -d build",
     "start:dev": "nodemon --exec babel-node server/server.js"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/zemchuks/Way_Ferer#readme",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "braces": "^3.0.2",
     "dotenv": "^8.0.0",
