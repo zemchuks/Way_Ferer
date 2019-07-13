@@ -1,15 +1,18 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import dotenv from 'dotenv'
+import cors from 'cors'
 
-import v1Router  from './routes'
+import router  from './server/routes'
 
-
+dotenv.config()
 const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors());
 
-app.use('/api/v1', v1Router)
+app.use('/api/v1', router)
 
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Welcome to way_ferer API'})
@@ -17,5 +20,5 @@ app.get('/', (req, res) => {
 
 const port = 8080
 app.listen(port, () => {
-    console.log(`App listening on ${port}`)
+    console.log(`Live at ${port}`)
 })
