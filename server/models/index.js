@@ -8,7 +8,7 @@ const pool = new Pool({
 });
 types.setTypeParser(1700, val => parseFloat(val));
 
-export default {
+ 
     /**
      * Database Query
      * @param {string} text
@@ -16,15 +16,9 @@ export default {
      * @returns {object} object
      */
 
-     query(text, params) {
-         return new Promise((resolve, reject) => {
-             pool.query(text, params)
-             .then((res) => {
-                 resolve(res);
-             })
-             .catch(err => {
-                 reject(err);
-             })
-         })
-     }
-}
+    class db {
+        static query(text, params, callback) {
+          return pool.query(text, params, callback);
+        }
+      }
+      export default db;

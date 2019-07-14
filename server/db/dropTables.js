@@ -7,9 +7,9 @@ DROP TABLE IF EXISTS trips CASCADE;
 DROP TABLE IF EXISTS bookings CASCADE;
 `
 
-const dropDatabase = async () => {
-    await db.query(dropTables).then(() => {
-        console.log('Tables removed from database')
+const dropDatabase = () => {
+     db.query(dropTables, () => {
+        console.log('Tables removed from database');
     })
-}
+};
 dropDatabase();

@@ -1,17 +1,9 @@
-import db from './index';
-import bcrypt from 'bcryptjs'
-
-const password = bcrypt.hashSync('password', 8);
-
 const populate = `
 INSERT INTO users (email, firstname, lastname, password, is_admin)
-VALUES ('bruno@gmail.com', 'bruno', 'austin', '${password}', 'true'),
-('jane@gmail.com', 'jane', 'doe', '${password}', 'false'),
-('ken@gmail.com', 'ken', 'max', '${password}', 'false'),
-('smith@gmail.com', 'will', 'smith', '${password}', 'false'),
-('max@gmail.com', 'spencer', 'max', '${password}', 'true'),
-('bob@gmail.com', 'bob', 'lash', '${password}', 'false'),
-('jake@gmail.com', 'jake', 'tom', '${password}', 'true');
+VALUES ('bruno@gmail.com', 'bruno', 'austin', 'password', 'false'),
+('jane@gmail.com', 'jane', 'doe', 'wordpass', 'false'),
+('ken@gmail.com', 'ken', 'max', 'passwerd', 'false'),
+('smith@gmail.com', 'will', 'smith', '$willsmith', 'false');
 
 INSERT INTO buses (plate_number, manufacturer, model, year, capacity)
 VALUES ('ADSGIETY', 'volkswagen', 'b-class', '2015-03-12', '50'),
@@ -29,11 +21,5 @@ VALUES ('10', 'enugu', 'kano', '50.50', 'in-active'),
 ('40', 'rome', 'canada', '100.50', 'active'),
 ('50', 'taraba', 'jalingo', '60.50', 'active'),
 ('60', 'gombe', 'damaturu', '20.30', 'in-active');
-`
-const addValues = async () => {
-    await db.query(populate).then(() => {
-        console.log('Tables sucessfuly populated')
-    })
-}
-
-addValues();
+`;
+export default populate;

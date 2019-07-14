@@ -18,7 +18,15 @@ app.get('/', (req, res) => {
     res.status(200).json({ message: 'Welcome to way_ferer API'})
 })
 
+// Invalid Routes
+app.all('*', (req, res, next) => {
+    res.status(404).json({ message: 'The Route you are requesting for does not exist' });
+  });
+  
+
 const port = 8080
 app.listen(port, () => {
     console.log(`Live at ${port}`)
 })
+
+export default app;

@@ -1,5 +1,3 @@
-import db from './index';
-
 const createTables = ` 
 CREATE TABLE IF NOT EXIST users (
     id SERIAL PRIMARY KEY NOT NULL,
@@ -37,9 +35,5 @@ CREATE TABLES IF NOT EXIST bookings (
     PRIMARY KEY (trip_id, user_id)
 );
 `;
-const createDbTables = async () => {
-    await db.query(createTables).then(() => {
-        console.log('Tables sucessfully created');
-    })
-}
-createDbTables();
+
+export default createTables;

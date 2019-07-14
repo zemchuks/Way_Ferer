@@ -4,12 +4,14 @@
   "description": "A public bus transportation booking server",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js --exec babel-node --presets babel-preset-env",
-    "createTables": "babel-node ./server/db/createTables.js",
-    "populateTable": "babel-node ./server/db/populateTables.js",
+    "start": "babel-node server.js --exec babel-node --presets babel-preset-env",
+    "createTable": "babel-node ./server/db/runcreatetables.js",
+    "prom-createTable": "node ./build/db/runcreatetables.js",
+    "populatetables": "babel-node ./server/db/runpopulate.js",
+    "prom-populatetables": "node ./build/db/runpopulate.js",
     "droptables": "babel-node ./server/db/dropTables.js",
-    "heroku-build": "babel-node ./server/db/createTables.js",
-    "build": "babel server -d build",
+    "test": "nyc mocha --reporter spec --require babel-register --require babel-polyfill ./server/test/ --timeout=100000 --exit",
+    "build": "npm run createTable && babel server -d build",
     "start:dev": "nodemon --exec babel-node server/server.js"
   },
   "repository": {
