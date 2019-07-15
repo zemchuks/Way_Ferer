@@ -46,7 +46,7 @@ $ npm test
 
 ## API
 
-The API is currently in version 1 (v1) and is hosted at [https://wayfereebus.herokuapp.com/](https://wayfererbus.herokuapp.com/)
+The API is currently in version 1 (v1) and is hosted at [https://wayfererbus.herokuapp.com/](https://wayfererbus.herokuapp.com/)
 
 ## API Documentation
 
