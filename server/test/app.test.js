@@ -1,6 +1,6 @@
 import chai from 'chai'
 import chaiHttp from 'chai-http'
-import { it, describe } from 'mocha'
+import { it, describe, beforeEach } from 'mocha'
 
 import app from '../../server';
 
@@ -8,6 +8,7 @@ chai.use(chaiHttp);
 chai.should();
 
 let request;
+
 beforeEach(() => {
     request = chai.request(app)
 })

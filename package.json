@@ -5,10 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "babel-node server.js --exec babel-node --presets babel-preset-env",
-    "createTable": "babel-node ./server/db/runcreatetables.js",
-    "prom-createTable": "node ./build/db/runcreatetables.js",
-    "populatetables": "babel-node ./server/db/runpopulate.js",
-    "prom-populatetables": "node ./build/db/runpopulate.js",
+    "createTable": "node ./build/db/runcreatetables.js",
+    "populatetables": "node ./build/db/runpopulate.js",
     "droptables": "babel-node ./server/db/dropTables.js",
     "test": "nyc mocha --reporter spec --require babel-register --require babel-polyfill ./server/test/ --timeout=100000 --exit",
     "build": "npm run createTable && babel server -d build",
