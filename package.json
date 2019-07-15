@@ -9,7 +9,7 @@
     "populatetables": "node ./build/db/runpopulate.js",
     "droptables": "babel-node ./server/db/dropTables.js",
     "test": "nyc mocha --reporter spec --require babel-register --require babel-polyfill ./server/test/ --timeout=100000 --exit",
-    "build": "npm run createTable && babel server -d build",
+    "build": "babel server -d build && npm run createTable",
     "start:dev": "nodemon --exec babel-node server/server.js"
   },
   "repository": {
