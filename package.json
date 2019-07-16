@@ -10,7 +10,7 @@
     "droptables": "babel-node ./server/db/dropTables.js",
     "test": "nyc mocha --reporter spec --require babel-register --require babel-polyfill ./server/test/ --timeout=100000 --exit",
     "build": "babel server -d build && npm run createTable",
-    "start:dev": "nodemon --exec babel-node server/server.js"
+    "start:dev": "nodemon server.js --exec babel-node "
   },
   "repository": {
     "type": "git",
