@@ -4,13 +4,15 @@
   "description": "A public bus transportation booking server",
   "main": "server.js",
   "scripts": {
-    "start": "babel-node server.js --exec babel-node --presets babel-preset-env",
+    "start": "node ./build/server.js",
     "createTable": "node ./build/db/runcreatetables.js",
+    "createTable-dev": "babel-node ./server/db/runcreatetables.js",
     "populatetables": "node ./build/db/runpopulate.js",
+    "populatetables-dev": "babel-node ./server/db/runpopulate.js",
     "droptables": "babel-node ./server/db/dropTables.js",
     "test": "nyc mocha --reporter spec --require babel-register --require babel-polyfill ./server/test/ --timeout=100000 --exit",
     "build": "npm run createTable && babel server -d build",
-    "start:dev": "nodemon --exec babel-node server/server.js"
+    "start:dev": "nodemon server.js --exec babel-node"
   },
   "repository": {
     "type": "git",
@@ -23,12 +25,14 @@
   },
   "homepage": "https://github.com/zemchuks/Way_Ferer#readme",
   "dependencies": {
+    "@hapi/joi": "^15.1.0",
     "babel-polyfill": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "braces": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "express-validator": "^6.1.1",
     "jsonwebtoken": "^8.5.1",
     "path": "^0.12.7",
     "pg": "^7.11.0"

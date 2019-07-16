@@ -4,7 +4,7 @@ VALUES ('bruno@gmail.com', 'bruno', 'austin', 'password', 'false'),
 ('jane@gmail.com', 'jane', 'doe', 'password', 'false');
 
 INSERT INTO buses (plate_number, manufacturer, model, year, capacity)
-VALUES ('ADSGIETY', 'volkswagen', 'b-class', '2015-03-12', '50'),
+VALUES ('ADSGIETY', 'volkswagen', 'b-class', '2015', '50'),
 ('YRTDFDTO', 'renault', 'tripper', '2012', '70'),
 ('SREGDSWR', 'mercedes', 'brt', '2013', '60');
 

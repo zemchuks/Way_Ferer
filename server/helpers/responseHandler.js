@@ -1,23 +1,40 @@
 /**
-* Generates error and sends to app error handler
-* @param {number} code Error Status Code
-* @param {string} message Specific error message
-*/
-export const errorRes = (next, code, message) => {
-    const error = new Error(message);
-    error.status = code;
-    return next(error);
-  };
-  
+ *    @fileOverview Class to hold response messages
+ *    @class ResponseHelper
+ *    @exports ResponseHelper
+ */
+
+class ResponseHandler {
   /**
-   * Returns response to the user
-   * @param {number} code Response Status Code
-   * @param {object | string} data Specific response message
-   */
-  export const successRes = (res, code, data) => res
-    .status(code)
-    .send({
-      status: code,
+     * success: prepare json response for API endpoint
+     * @param {object} res response object
+     * @param {Number} statusCode success status code of response
+     * @param {object} data Object data corresponding with success status code
+     * @returns {object} json response object
+    * */
+
+  static success(res, statusCode, data) {
+    return res.status(statusCode).json({
+      status: 'success',
       data,
     });
-  
+  }
+
+  /**
+     * error: prepare json response for API endpoint
+     * @param {object} res response object
+     * @param {Number} statusCode error status code of response
+     * @param {object} error error message corresponding with status code
+     * @returns {object} json response object
+    * */
+
+  static error(res, statusCode, error) {
+    return res.status(statusCode).json({
+      status: 'error',
+      error,
+    });
+  }
+}
+
+
+export default ResponseHandler;

@@ -1,4 +1,4 @@
- /**
+
 import chai from 'chai'
 import chaiHttp from 'chai-http'
 import { it, describe } from 'mocha'
@@ -13,14 +13,14 @@ beforeEach(() => {
     request = chai.request(app)
 });
 
-describe('POST auth/signup', () => {
+describe('POST /signup', () => {
     it('SHOULD NOT register the user if email is omitted', async () => {
         const newUser = {
             firstname: 'bruno',
             lastname: 'austin',
             password: 'password',
         };
-        const res = await request.post('/api/vi/auth/sigup').send(newUser);
+        const res = await request.post('/api/vi/sigup').send(newUser);
         res.should.have.status(404);
         res.body.should.have.property('error');
         res.body.should.have.property('status').eql(404);
@@ -31,13 +31,13 @@ describe('POST auth/signup', () => {
             lastname: 'austin',
             password: 'password',
         };
-    const res = await request.post('/api/v1/auth/signup').send(newUser);
+    const res = await request.post('/api/v1/signup').send(newUser);
     res.should.have.status(404);
     res.body.should.have.property('error');
     res.body.should.have.property('error').eql(404);
   });
 });
- 
+  /**
   it('SHOULD NOT register the user if lastname is omitted', async () => {
     const newUser = {
       email: 'bruno@gmail.com',
