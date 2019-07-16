@@ -4,7 +4,7 @@
   "description": "A public bus transportation booking server",
   "main": "server.js",
   "scripts": {
-    "start": "node ./build/server.js",
+    "start": "babel-node ./build/server.js",
     "createTable": "node ./build/db/runcreatetables.js",
     "createTable-dev": "babel-node ./server/db/runcreatetables.js",
     "populatetables": "node ./build/db/runpopulate.js",
