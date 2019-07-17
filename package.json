@@ -14,6 +14,9 @@
     "build": "npm run createTable && babel server -d build",
     "start:dev": "nodemon server.js --exec babel-node"
   },
+  "engines": {
+    "node": "10.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zemchuks/Way_Ferer.git"
