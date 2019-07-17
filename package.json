@@ -9,8 +9,9 @@
     "populatetables": "node ./build/db/runpopulate.js",
     "droptables": "babel-node ./server/db/dropTables.js",
     "test": "nyc mocha --reporter spec --require babel-register --require babel-polyfill ./server/test/ --timeout=100000 --exit",
-    "build": "babel server -d build && npm run createTable",
-    "start:dev": "nodemon server.js --exec babel-node "
+    "build": "babel server -d build && npm run createTable && npm run createAdmin",
+    "start:dev": "nodemon server.js --exec babel-node ",
+    "createAdmin": "babel-node ./server/db/createAdmin.js"
   },
   "repository": {
     "type": "git",
